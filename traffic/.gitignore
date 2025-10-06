@@ -1,4 +1,1 @@
-gtsrb/
-venv/
-firstModelEverTrained.h5
-requirements.txt
+*.h5
