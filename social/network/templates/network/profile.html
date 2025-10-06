@@ -1,0 +1,80 @@
+{% extends "network/layout.html" %}
+
+{% block title %} {{account.username}} {% endblock %}
+
+{% block body %}
+
+<div style="margin-left: 1cm; margin-top: 1cm;">
+
+    <h3>{{account.username}}</h3><br>
+    {% if account != user %}
+    {% if follows %}
+    <form action="{% url 'follow' followOrNot='yes' %}" method="post">
+        <input type="hidden" name="following_id" value="{{account.id}}">
+    <button class="btn btn-primary" type="submit" >Follow</button><br><br><br>
+    </form>
+    {% else %}
+    <form action="{% url 'follow' followOrNot='no' %}" method="post">
+        <input type="hidden" name="following_id" value="{{account.id}}">
+    <button class="btn btn-primary" style="background-color: white; color: black;" type="submit" >Unfollow</button><br><br><br>
+    </form>
+    {% endif %}
+    {% endif %}
+    <b>Followers  </b>
+    <b style="margin-left: 2cm;">Following  </b><br>
+    <span>{{followers}}</span><span style="margin-left: 3.5cm;">{{following}}</span><br><br>
+    <hr>
+    <h3>Posts</h3><br><br>
+
+    <div id="posts" >
+        <div id="editArea" hidden="true" style="margin-left: 1cm;">
+            <h3>Edit Post</h3>
+            <textarea id="ta" style="width: 10cm; height: 3cm; "></textarea>
+            <button class="btn btn-primary" id="edit" style="margin-left: 1cm;">Save changes</button><br><br>
+        </div>
+       
+    {% for post in posts %}
+    
+    <div  id="{{post.id}}" style="margin-bottom: 1cm; margin-left: 1cm;">
+        <a href="{% url 'profile' id=post.op.id  %}" style="text-decoration: none;"><h5>{{post.op}} </h5></a>
+        <span id="content {{post.id}}">{{post.content}}</span><br><br>
+        <span style="color: gray;">Date: {{post.date}}</span><br>
+        {% if user == post.op %}
+        <br><a href="#editArea"><button class="btn btn-primary" onclick="setEdit( {{post.id}}, `{{post.content}}` )">Edit</button></a><br><br>
+        
+        {% endif %}
+
+        
+        <div>
+            {% if post.id in likedPosts %}
+            <button type="button" id='like {{post.id}}' class="btn btn-link" onclick="likePost({{post.id}}, {{user.id}})">Unlike</button> <span id='count {{post.id}}'>{{post.likesCount}}</span>
+            
+           
+            
+           {% else %}
+            <button type="button" id='like {{post.id}}' class="btn btn-link" onclick="likePost({{post.id}}, {{user.id}})">Like</button> <span id='count {{post.id}}'>{{post.likesCount}}</span>
+            
+            {% endif %}
+        
+    </div>
+   
+    </div>
+    
+    {% endfor %}
+    </div>
+
+</div>
+
+<div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if posts.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            {% if posts.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
