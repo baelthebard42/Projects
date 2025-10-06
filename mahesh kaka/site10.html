@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Books Publishing</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #ff6347; /* Tomato */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .genre {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .genre:nth-child(odd) {
+            background-color: #ffd700; /* Gold */
+        }
+
+        .genre:nth-child(even) {
+            background-color: #adff2f; /* GreenYellow */
+        }
+
+        footer {
+            background-color: #4682b4; /* SteelBlue */
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .newsletter {
+            margin: 40px 0;
+            background-color: #f0e68c; /* Khaki */
+            padding: 20px;
+        }
+
+        input[type="email"], button {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #6a5acd; /* SlateBlue */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Welcome to Bright Books Publishing!
+    </header>
+
+    <div class="container">
+        <div class="genre">
+            <h2>Fiction</h2>
+            <p>Explore our wide range of fiction books sure to ignite your imagination.</p>
+        </div>
+        <div class="genre">
+            <h2>Non-Fiction</h2>
+            <p>Dive deep into reality with our comprehensive collection of non-fiction titles.</p>
+        </div>
+        <div class="genre">
+            <h2>Sci-Fi</h2>
+            <p>Travel through time and space with our exciting sci-fi series.</p>
+        </div>
+        <div class="genre">
+            <h2>Children's Books</h2>
+            <p>Bring joy and learning to young minds with our children's books.</p>
+        </div>
+
+        <div class="newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <p>Get updates on our latest books and special offers.</p>
+            <input type="email" placeholder="Enter your email">
+            <button onclick="subscribe()">Subscribe</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Bright Books Publishing. All rights reserved.
+    </footer>
+
+    <script>
+        function subscribe() {
+            const input = document.querySelector('input[type="email"]');
+            if (input.value) {
+                alert('Thank you for subscribing! Check your inbox for updates.');
+                input.value = ''; // Clear the input after subscribing
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+</html>

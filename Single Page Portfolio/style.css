@@ -1,0 +1,175 @@
+body{
+    background-color: white;
+    font-family: Arial;
+    font-size: medium;
+    color:black;
+}
+
+#navig{
+    background-color:  #7600bc;
+    color:white;
+    margin-left:-1cm;
+    margin-right:-1cm;
+    margin-top:-1cm;
+    padding-top: 1cm;
+    padding-bottom: 2cm;
+    padding-left: 2cm;
+    padding-right:2cm;
+    height: 15mm; 
+}
+
+#options{
+    text-align: right;
+}
+
+a{
+    background-color: #7600bc;
+    color:antiquewhite;
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bolder;
+    color:white;
+}
+
+ h1{
+    color:#7600bc;
+}
+
+#info > figure{
+    float:left;
+}
+
+#guff > h1{
+    padding-top: 2cm;
+}
+#skills{
+    padding-left: 2cm;
+    margin-bottom: 2cm;
+}
+#skills > h1{
+    text-align: left;
+}
+
+fieldset{
+    text-align:center;
+    border-color: lightgray;
+    border-radius: 10px;
+    height: 200px;
+    width: 150px;
+    margin-left: 1cm;
+    margin-right: 50px;
+    float:left;
+}
+
+#sets > fieldset{
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
+#proj{
+    padding-left: 2cm;
+    margin-bottom: 2cm;
+}
+
+#pguff{
+    padding-left: 1cm;
+}
+
+hr{
+    color:lightgrey;
+}
+
+#recomm{
+  display: flex;
+  margin-left: 2cm;
+  flex-direction: row;
+  flex-flow: wrap;
+  padding: 20px;
+}
+
+#notes{
+    margin-bottom:2cm;
+}
+#notes > fieldset{
+    font-weight: bold;
+    font-style: italic;
+    font-size: small;
+    width: 300px;
+    height: 150px;
+    padding-top:0.5cm;
+    margin-bottom: 1cm;
+}
+
+#inputsec{
+    margin-top:1cm;
+    text-align: center;
+}
+
+button{
+    border-radius:3px;
+    border-color:#7600bc;
+    color:#7600bc;
+    text-align: center;
+    width:100px;
+    height: 35px;
+    background-color: white;
+}
+
+button:hover{
+    border-radius:3px;
+    border-color:#7600bc;
+    color:white;
+    text-align: center;
+    width:100px;
+    height: 35px;
+    background-color: #7600bc; 
+    cursor:pointer;
+}
+
+input{
+    width: 700px;
+    margin-bottom: 1cm;
+}
+
+footer{
+    text-align: right;
+}
+
+#to{
+    height: 1cm;
+    width:1cm;
+}
+
+#tarif{
+    height: 200px;
+}
+
+#popup{
+    background-color:#e8bcf0;
+    text-align: center;
+    width:500px;
+    border-color: 1px solid black;
+    border-radius:5px;
+    padding-bottom: 1cm;
+    padding-top: 1cm;
+    height:5cm;
+    visibility:hidden;
+    top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  position:fixed;
+}
+
+#popup > button{
+    color:black;
+    background-color: white;
+    border-color: black;
+}
+#popup > button:hover{
+    background-color: #e8bcf0;
+    font-weight: bolder;
+    cursor:pointer;
+}
+
+

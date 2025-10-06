@@ -1,0 +1,40 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Create Listings{% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<h1>Create Listings</h1><br>
+{% if message %}<h5>{{message}}</h5>{% endif %}
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %} 
+    <div class="form-group">
+        <input autofocus class="form-control" type="text" name="title" placeholder="Title">
+    </div><br>
+    <div class="form-group">
+        <input class="form-control" type="text" name="description" placeholder="Description (max 1000)" style="height: 8cm;">
+    </div><br>
+    <div class="form-group">
+        <input class="form-control" type="number" min="10" step="5" name="stbid" placeholder="Starting bid (min $10)">
+    </div><br>
+    <div class="form-group">
+      Select Category:  <select class="form-control" name="category">
+        <option value="Household">Household</option>
+        <option value="Kids">Kids</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Education">Education</option>
+        <option value="Others">Others</option>
+    </div><br>
+    <div class="form-group">
+        <input class="form-control" type="url" name="url" placeholder="Image URL (Optional)" style="margin-top: 0.5cm;">
+    </div><br>
+    <input class="btn btn-primary" type="submit" >
+</form>
+
+{% else %}
+<h1>You don't have access to this content</h1>
+{% endif %}
+
+
+{% endblock %}

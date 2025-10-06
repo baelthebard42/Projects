@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body>
+
+        <nav id="navig">
+            <br><br>
+            <div id="options">
+                <a href="#info"> About Me &nbsp &nbsp &nbsp</a>
+                <a href="#skills"> Skills &nbsp &nbsp &nbsp</a>
+                <a href="#proj">  Projects &nbsp &nbsp &nbsp</a>
+                <a href="#recomm">  Recommendations    </a>
+             </div>
+            <div id="contact">
+                Anjal Adhikari<br>
+                <img src="images/envelope.png" width="20 px" height="20 px"><i style="font-size:small;">anjaladhikari68@gmail.com</i><br>
+                <img src="images/phone.png" width="20 px" height="20 px"><i style="font-size:small;">+977 9742829348</i><br>
+            </div>
+        </nav>
+        
+        <section id="info">
+            <figure>
+                <img src="images/patrick-bateman-american-psycho.gif" width="300 px" height="300px">
+            </figure>
+            <div id="guff">
+                <h1>Hi ! I'm Anjal Adhikari <img src="images/hi.jpg" width="25 px"></h1>
+                <p>I'm a Computer Engineering student at Pulchowk Campus, Lalitpur. My major field of interests include Web Development, 
+                   Embedded Systems, Artificial Intelligence and others, yet to explore. I am yet to start my journey on Artificial Intelligence, 
+                   still, I'm happy for how much I've progressed on the other two. Besides my tech career, I play guitar, cook and play cricket. 
+                   I feel like I can sing if I try, so, maybe someday? </p><br><br><br><br><br><br><br><br><br>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h1>
+                Skills
+            </h1><br>
+            <div id="sets">
+                <fieldset id="html">
+                    <img src="images/html5.png" width="50 px"><br><br>
+                    <p style="font-size: small;"> HTML <br><br> </p>
+                    <p style="font-size: medium;"> 1 year experience  </p>
+                </fieldset>
+                <fieldset id="C">
+                    <img src="images/cp.png" width="50px"><br><br>
+                    <p style="font-size: small;"> C <br><br> </p>
+                    <p style="font-size: medium;"> 2 year experience  </p>
+                </fieldset>
+                <fieldset id="C++">
+                    <img src="images/c++.png" width="50px"><br><br>
+                    <p style="font-size: small;"> C++ <br><br> </p>
+                    <p style="font-size: medium;"> 2 year experience  </p>
+                </fieldset>
+                <fieldset id="CSS3">
+                    <img src="images/CSS3.png" width="50px"><br><br>
+                    <p style="font-size: small;"> CSS3 <br><br> </p>
+                    <p style="font-size: medium;"> 1 year experience  </p>
+                </fieldset>
+                <fieldset id="Javascript">
+                    <img src="images/js.jpeg" width="50px"><br><br>
+                    <p style="font-size: small;"> Javascript <br><br> </p>
+                    <p style="font-size: medium;"> 1 year experience  </p>
+                </fieldset><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>  
+        </section>
+
+        <section id="proj" >
+            <h1>Projects</h1><br>
+            <div id="pguff">
+                <p style="font-size: medium; font-weight: bold;">Cricket Score System</p><br>
+                <ul>
+                    <li>An score management system for Cricket.</li>
+                    <li>Can be used for recording score in a live cricket match to access it for later use.</li>
+                    <li>Stores runs, wickets and calculates other parameters like strike rate of an individual player.</li>
+                </ul><br>
+                <hr>
+                <p style="font-size: medium; font-weight: bold;">Tic-Tac-Toe</p><br>
+                <ul>
+                    <li>The same, old school tic-tac-toe game</li>
+                    <li>Single player as well as multiplayer</li>
+                </ul><br>
+                <hr>
+                <p style="font-size: medium; font-weight: bold;">Library Management System</p><br>
+                <ul>
+                    <li>A simple book management system for my home library</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="recomm">
+            <h1>Recommendations</h1><br><br><br><br><br><br>
+            <div id="notes">
+
+                <fieldset>
+                    "Anjal is a very quick learner and efficient to a degree where sometimes it's difficult to catch up with him. 
+                    He's got the easy-to-talk-to personality which makes it easier to discuss things with him. The day he starts
+                    showing up on time, I think it's the day when Anjal has worked through most of his flaws."
+                </fieldset>
+
+                <fieldset>
+                    "He is the stereotypical ambivert you would find in the tech industry and is somehow able to have a good grasp
+                     on both the real and online life. I think he's got a great capacity to learn as well as lead people."
+                </fieldset>
+
+                <fieldset>
+                    "I know Anjal from back in our Bachelors in Engineering days when he used to talk about anime and books stuffs in our discord
+                    server and show up late for the classes. He is an enthusiastic individual, who I have seen has the capacity to organize
+                    as well as lead a team and learn along the way."
+                </fieldset>
+            </div><br><br><br><br>
+        </section>
+        <div id="inputsec">
+            <h3>Leave a recommendation</h3><br>
+            <input type="text" id="name" placeholder="Name (Optional)"><br>
+            <input type="text" id="tarif" placeholder="Message"><br>
+            <button id="sub" onclick="addRecom()">Submit</button>
+        </div>
+
+        <div id="popup">
+            <img src="images/tick.jpg" height="30px" width="30px"><br>
+            <h3>Thank you for leaving a recommendation !!</h3><br><br><br>
+            <button id="ok" onclick="popup(false)">Ok</button>
+        </div>
+        <footer>
+            <a href="#top"><img src="images/home.png" id="to"></a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

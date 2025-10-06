@@ -1,0 +1,13 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+{% if user == remover %}
+{% if MessageUser %}
+<center><h5>{{MessageUser}}</h5></center>
+{% endif %}
+{% endif %}
+
+
+
+{% endblock %}

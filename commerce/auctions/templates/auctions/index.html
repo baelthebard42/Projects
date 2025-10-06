@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>Active Listings</h2>
+{% for one in lists %}
+<a href="{% url 'dislist' count=one.id %}" style=" text-decoration: none; color:black">
+    <div id="listing" >
+    <border width="10cm" height="10cm" color="black" style="padding-left: 0.5cm; padding-top: 0.5cm; padding-right: 0.5cm; padding-bottom: 0.5cm;">
+        {% if one.imgurl %}
+        <center class="insidebox"><img src="{{one.imgurl}}" alt="Image not available"></center><br>
+        {% endif %}
+        <center class="insidebox"><h3>{{one.title}}</h3></center><br>
+        <h5>Description:</h5> {{one.description}}<br>
+        <h5>Category:</h5> {{one.category}}<br>
+        <h5>Starting bid:</h5> ${{one.stbid}}<br>
+    </border>
+</div>
+</a>
+<hr align="center" width="5000px" height="5px" style="color: grey;">
+
+
+{% empty %} No listings made yet.
+{% endfor %}
+{% endblock %}

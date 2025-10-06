@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+<h1>Categories</h1><br>
+<ul>
+<li><a href="{% url 'categories' 'All' %}"> All</option> </a></li>
+<li><a href="{% url 'categories' 'Household' %}">  <option value="House">Household</option> </a></li>
+<li><a href="{% url 'categories' 'Kids' %}">  <option value="Kids">Kids</option> </a></li>
+<li><a href="{% url 'categories' 'Electronics' %}"> <option value="Electronics">Electronics</option> </a></li>
+<li><a href="{% url 'categories' 'Fashion' %}">  <option value="Fashion">Fashion</option> </a></li>
+<li><a href="{% url 'categories' 'Education' %}">  <option value="Education">Education</option> </a></li>
+</ul>
+{% endblock %}

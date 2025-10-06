@@ -1,0 +1,1 @@
+It's just cleaning your face with cold water daily. Actually, more than that. Moisturize and use suncreen daily.

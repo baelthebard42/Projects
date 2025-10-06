@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Solutions Inc.</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: #f4f4f9;
+        }
+
+        header {
+            background: #5c67f2;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            width: calc(33% - 40px);
+            vertical-align: top;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+
+        button {
+            background: #5c67f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .form-input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .submit-btn {
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        ML Solutions Inc.
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>Product Recommendation Engine</h3>
+            <p>Enhance your ecommerce platform with our state-of-the-art recommendation engine that boosts sales by providing personalized product suggestions.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="card">
+            <h3>Customer Churn Prediction</h3>
+            <p>Predict customer churn with high accuracy and take proactive steps to retain your customers using our advanced machine learning models.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="card">
+            <h3>Real-time Analytics</h3>
+            <p>Our real-time analytics solutions help businesses make data-driven decisions instantly and improve operational efficiency.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+
+    <footer>
+        <form>
+            <h2>Contact Us</h2>
+            <input type="text" class="form-input" placeholder="Your Name">
+            <input type="email" class="form-input" placeholder="Your Email">
+            <textarea class="form-input" placeholder="Your Message" rows="4"></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </footer>
+
+    <script>
+        // Example of a simple dynamic interaction
+        document.querySelectorAll('.card button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Thanks for your interest! We will send more information soon.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}{{list.title}}{% endblock %}
+
+{% block body %}
+<center>
+    <h1>{{list.title}}</h1><br>
+    <img src="{{list.imgurl}}" alt="Image not available">
+</center><br>
+{% if list.activity == True %}
+{% if user.is_authenticated %}
+{% if islistinginwatchlist %}
+<form action="{% url 'rWatch' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" value="{{list.id}}" name="iid">
+  <input class="btn btn-primary" style="background-color:red; color: antiquewhite;" type="submit" value="Remove from Watchlist">
+</form>
+{% else %}
+<form action="{% url 'watchlists' %}" method="post">
+  {% csrf_token %}
+  <input class="btn btn-primary" style="background-color:gray; color: antiquewhite;" type="submit" value="Add to Watchlist">
+  <input type="hidden" value="{{list.id}}" name="id">
+</form>
+{% endif %}
+{% endif %}<br>
+
+
+
+<h3>Details : </h3><br>
+<b>Created by : </b> {{list.creator.username}}<br>
+<b>Description : </b>{{list.description}}<br>
+<b>Category : </b>{{list.category}}<br>
+<b>Created on : </b>{{list.date}}<br>
+<b>Starting bid : </b>$ {{list.stbid}}<br><br>
+{% if user != list.creator %}
+{% if user.is_authenticated %}
+<div class="form-group">
+  <form action="{% url 'addBid' %}" method="post">
+    {% csrf_token %}
+    <p style="color: gray";> This could become yours, you're only a few clicks away. Place the bid, who knows.</p><br>
+   
+    {% if message %}<br>{{message}}<br>{% endif %}
+    
+    <input autofocus type="number" min="{{list.stbid}}" class="form-control" placeholder="Enter bid" name="bidvalue">
+    <input type="hidden" value="{{list.id}}" name="id"><br>
+    <input type="submit" class="btn btn-primary" value="Place bid">
+  </form>
+{% endif %}
+{% endif %}<br>
+
+<h3>Current biddings </h3>
+{% if bidlist %}
+{% for i in bidlist %}
+<ul>
+<li>{{i.player.username}} : ${{i.bid}}</li>
+</ul>
+{% endfor %}
+{% else %}
+ No biddings made so far. <br><br>
+{% endif %}
+
+{% if user == list.creator %} 
+<form action="{% url 'closeBid' %}" method="post">
+  {% csrf_token %}
+  <input type="submit" value="Close Bid" class="btn btn-primary" style="background-color:red;">
+  <input type="hidden" value="{{list.title}}" name="closeTitle">
+</form><br>
+{% endif %}
+
+{% if user.is_authenticated %}
+<form action="{% url 'comment' %}" method="post">
+  {% csrf_token %}
+  <h3>Add Comment</h3>
+  <input type="text" class="form-control" style="width:16cm;" name="content" placeholder="Type comment">
+  <input type="hidden" value="{{user.username}}" name="commenter">
+  <input type="hidden", value="{{list.id}}", name="saman">
+  <input type="submit" class="btn btn-primary" style="width:1.5cm;" value="Post">
+</form>
+{% endif %}
+<br>
+<h3>Comments</h3><br>
+{% for each in comments %}
+<div style="border-width:3px; border-style: solid; border-color: black; padding:0.5cm;">
+<h5 style="color:blue">{{each.commentor.username}} : </h5>
+{{each.comment}}
+</div>
+<br><br>
+{% empty %}
+No comments yet.
+{% endfor %}
+
+{% elif list.activity == False and user == list.creator %}
+<center><h1>You've removed this listing.</h1></center>
+{% elif list.activity == False and user == winner.player %}
+<center><h1>Congratulations, you've won the auction for {{list.title}}</h1></center>
+{% else %}
+<center><h1>Object sold</h1></center>
+{% endif %}
+
+
+
+{% endblock %}

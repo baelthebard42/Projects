@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Jokes Bookstore</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #F0DB4F;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #FF851B;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+        .container {
+            flex: 1;
+            text-align: center;
+            width: 90%;
+            max-width: 960px;
+            margin: 20px 0;
+        }
+        h1, h2 {
+            color: #307351;
+        }
+        p {
+            color: #333;
+        }
+        .book {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF851B;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #E07A0D;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Just Jokes Bookstore!</h1>
+        <p>Your one-stop shop for laughter and fun!</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Featured Joke Books</h2>
+            <div class="book">
+                <h3>The Ultimate Joke Collection</h3>
+                <p>Discover the funniest jokes that will keep you laughing for hours. Perfect for all age groups!</p>
+                <button>Buy Now - $9.99</button>
+            </div>
+            <div class="book">
+                <h3>Kids' Giggle Fest</h3>
+                <p>A carefully curated collection of child-friendly jokes. Guaranteed to make your kids giggle!</p>
+                <button>Buy Now - $7.99</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Get a Random Joke</h2>
+            <p id="joke">Click the button to laugh!</p>
+            <button onclick="newJoke()">Tell Me a Joke!</button>
+        </section>
+    </div>
+
+    <footer>
+        Contact us at support@justjokesbooks.com
+    </footer>
+
+    <script>
+        const jokes = [
+            "What do you call fake spaghetti? An impasta!",
+            "Why don't skeletons fight each other? They don't have the guts.",
+            "I'm reading a book on anti-gravity. It's impossible to put down!",
+            "What do you call cheese that isn't yours? Nacho cheese!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!"
+        ];
+
+        function newJoke() {
+            const jokeElement = document.getElementById('joke');
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            jokeElement.innerText = jokes[randomIndex];
+        }
+    </script>
+</body>
+</html>
