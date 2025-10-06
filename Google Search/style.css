@@ -1,0 +1,117 @@
+body{
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#navig{
+    display:flex;
+    flex-direction: row;
+    padding-top: 0.3cm;
+    justify-content: flex-end;
+    column-gap: 0.5cm;
+    font-size: small;
+}
+
+a{
+    text-decoration:none;
+    color:black;
+}
+
+ a:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#middle{
+   text-align:center;
+   margin-top: 3cm;
+   word-spacing: 0.5cm;
+}
+
+.butt{
+    margin-bottom: 1cm;
+}
+
+#searchbar{
+    width:15cm;
+    height:1cm;
+    border: 1px solid lightgrey;
+    border-radius: 100px;
+}
+
+input:hover{
+    box-shadow: 5px 5px 5px lightgray;
+}
+
+#but1,#but2{
+    width:3.5cm;
+    height:0.7cm;
+    background-color:#f8f9fa;
+    border:1px solid #f8f9fa;
+    border-radius: 4px;
+    color:#3c4043;
+}
+
+#but1,#but2:hover{
+    cursor:pointer;
+}
+
+#bottom{
+    color:lightgray;
+    background-color: #eaebf1;
+    margin-top: 6.3cm;
+    margin-left: -1cm;
+    margin-right: -1cm;
+    margin-bottom: -1cm;
+    padding-right: 2cm;
+    padding-top: 1.5cm;
+    font-size: medium;
+    height: 1px;
+}
+
+#left{
+    text-align: left;
+    float:left;
+    padding-left: 0.5cm;
+    
+}
+
+#right{
+    text-align:right;
+   
+}
+
+#right > a{
+    color:grey;
+}
+
+#left > a{
+    color:grey;
+}
+.l{
+    padding-left:0.5cm;
+}
+
+#ic{
+    position:relative;
+}
+
+#ic > img{
+    position:absolute;
+    padding-top: 0.3cm;
+    padding-left: 0.3cm;
+}
+
+#ic > input{
+    padding-left: 1.3cm;
+    font-size: large;
+}
+
+
+
+
+
+
+
+
